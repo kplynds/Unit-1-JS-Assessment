@@ -71,7 +71,11 @@ function getSummary(character) {
  * Sample data expected output: 8000
 */
 function getVehiclesCostInCreditsSumTotal(character) {
-  // TODO: Add your code here.
+  let total = 0;
+  for (let i = 0; i < character.vehicles.length; i++) {
+    total = total + character.vehicles[i].cost_in_credits;
+  }
+  return total;
 }
 
 /**
@@ -85,7 +89,11 @@ function getVehiclesCostInCreditsSumTotal(character) {
  * Sample data expected output: 27
 */
 function getStarshipPassengerAndCrewSumTotal(character) {
-  // TODO: Add your code here.
+  let total = 0;
+  for (let i =0; i < character.starships.length; i++) {
+    total = total + character.starships[i].crew + character.starships[i].passengers;
+  }
+  return total;
 }
 
 /**
@@ -102,7 +110,12 @@ function getStarshipPassengerAndCrewSumTotal(character) {
  * Given film #7, expected error: `There are only 3 Star Wars movies. Flan fiction excluded.`
 */
 function getNthFilm(character, filmNumber) {
-  // TODO: Add your code here.
+  if (filmNumber <= 3) {
+    return character.films[filmNumber - 1];
+  }
+  else if (filmNumber > 3) {
+    return "There are only 3 Star Wars movies. Flan fiction excluded.";
+  }
 }
 
 /**
